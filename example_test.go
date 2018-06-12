@@ -1,17 +1,17 @@
 package trylock_test
 
 import (
-	"fmt"
+	"testing"
 
-	"github.com/LK4D4/trylock"
+	"github.com/chappjc/trylock"
 )
 
-func Example() {
+func TestExample(t *testing.T) {
 	var mu trylock.Mutex
-	fmt.Println(mu.TryLock())
-	fmt.Println(mu.TryLock())
+	t.Log(mu.TryLock())
+	t.Log(mu.TryLock())
 	mu.Unlock()
-	fmt.Println(mu.TryLock())
+	t.Log(mu.TryLock())
 	// Output:
 	// true
 	// false
